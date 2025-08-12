@@ -131,16 +131,10 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const toggleActivity = async (activityId) => {
-    console.log('=== toggleActivity called ===');
-    console.log('activityId:', activityId);
-    console.log('Current activities:', JSON.stringify(activities, null, 2));
-    
     const activity = activities.find(a => a.id === activityId);
-    console.log('Found activity:', activity);
     
     // Handle unchecking completed activities first
     if (activity && activity.completed) {
-      console.log('Activity is completed, unchecking...');
       const updatedActivities = activities.map(a =>
         a.id === activityId ? { ...a, completed: false } : a
       );
@@ -152,7 +146,6 @@ const HomeScreen = ({ navigation }) => {
 
     // Handle meditation with timer
     if (activityId === 'meditation') {
-      console.log('Navigating to Timer screen...');
       navigation.navigate('Timer', { activity });
       return;
     }
@@ -388,13 +381,6 @@ const HomeScreen = ({ navigation }) => {
           >
             <MaterialCommunityIcons name="cog" size={24} color="#666" />
             <Text style={styles.actionText}>Settings</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.actionButton}
-            onPress={() => navigation.navigate('Debug')}
-          >
-            <MaterialCommunityIcons name="bug" size={24} color="#666" />
-            <Text style={styles.actionText}>Debug</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

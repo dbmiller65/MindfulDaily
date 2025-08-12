@@ -63,15 +63,11 @@ const TimerScreen = ({ route, navigation }) => {
   }, [isRunning]);
 
   const completeActivity = async () => {
-    console.log('=== Timer completeActivity called ===');
-    
     // Get current activities from storage
     const activities = await storage.getTodayActivities();
-    console.log('Activities from storage:', JSON.stringify(activities, null, 2));
     
     // Update meditation with completion and actual duration
     const actualMinutes = Math.floor((duration * 60 - timeLeft) / 60);
-    console.log('Actual minutes:', actualMinutes);
     
     const updatedActivities = activities.map(a =>
       a.id === 'meditation' ? { 
@@ -80,10 +76,8 @@ const TimerScreen = ({ route, navigation }) => {
         actualDuration: actualMinutes > 0 ? actualMinutes : duration 
       } : a
     );
-    console.log('Updated activities:', JSON.stringify(updatedActivities, null, 2));
     
     await storage.saveTodayActivities(updatedActivities);
-    console.log('Activities saved to storage');
     
     // Update streaks
     await storage.updateStreaks();

@@ -9,7 +9,6 @@ import HomeScreen from './src/screens/HomeScreen';
 import TimerScreen from './src/screens/TimerScreen';
 import SummaryScreen from './src/screens/SummaryScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
-import DebugScreen from './src/screens/DebugScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -48,8 +47,11 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Timer" component={TimerScreen} />
         <Stack.Screen name="Summary" component={SummaryScreen} />
-        <Stack.Screen name="Settings" component={SettingsScreen} />
-        <Stack.Screen name="Debug" component={DebugScreen} />
+        <Stack.Screen 
+          name="Settings" 
+          component={SettingsScreen}
+          options={{ title: 'Settings' }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
