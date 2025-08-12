@@ -119,7 +119,7 @@ const SummaryScreen = ({ navigation }) => {
             </Text>
           )}
           
-          {summary?.days && summary.days[6].allCompleted && (
+          {summary?.days && summary.days[6] && summary.days[6].allCompleted && (
             <Text style={styles.insightText}>
               🎯 Perfect finish! You completed all activities today. Keep the momentum going!
             </Text>

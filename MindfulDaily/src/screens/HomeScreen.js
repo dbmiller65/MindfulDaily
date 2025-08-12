@@ -267,21 +267,19 @@ const HomeScreen = ({ navigation }) => {
     }
   };
 
-  const saveOutdoors = async () => {
+  const saveOutdoor = async () => {
     const updatedActivities = activities.map(a => 
-      a.id === 'outdoor' ? { 
+      a.id === 'outdoorTime' ? { 
         ...a, 
-        completed: true, 
-        actualDuration: parseInt(outdoorMinutes) || 30,
-        activity: outdoorActivity || 'walk'
+        completed: true,
+        outdoorType: outdoorType,
+        actualDuration: parseInt(outdoorMinutes) || 20
       } : a
     );
     setActivities(updatedActivities);
     await storage.saveTodayActivities(updatedActivities);
     await updateStreaks(updatedActivities);
-    setOutdoorModal(false);
-    setOutdoorMinutes('');
-    setOutdoorActivity('Walk');
+    setOutdoorModalVisible(false);
   };
 
   const completedCount = activities.filter(a => a.completed).length;
@@ -299,8 +297,7 @@ const HomeScreen = ({ navigation }) => {
       >
         <View style={styles.header}>
           <Text style={styles.headerTitle}>Today's Activities</Text>
-          <Text style={styles.headerDate}>{format(new Date(), 'EEEE, MMM d')}</Text>
-          <Text style={{color: 'blue', fontSize: 14, marginTop: 4, fontWeight: 'bold'}}>v2.7 - All Fixed!</Text>
+          <Text style={styles.date}>{format(new Date(), 'EEEE, MMM d')}</Text>
         </View>
         <Text style={styles.greeting}>How are you feeling today?</Text>
 
