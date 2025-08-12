@@ -594,7 +594,7 @@ const HomeScreen = ({ navigation }) => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.modalButton, styles.saveButton]}
-                onPress={saveOutdoors}
+                onPress={saveOutdoor}
               >
                 <Text style={styles.saveButtonText}>Save</Text>
               </TouchableOpacity>
