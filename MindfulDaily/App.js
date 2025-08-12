@@ -44,9 +44,27 @@ export default function App() {
           animation: 'slide_from_right',
         }}
       >
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Timer" component={TimerScreen} />
-        <Stack.Screen name="Summary" component={SummaryScreen} />
+        <Stack.Screen 
+          name="Home" 
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen 
+          name="Timer" 
+          component={TimerScreen}
+          options={{ 
+            title: 'Meditation Timer',
+            headerBackTitle: 'Back'
+          }}
+        />
+        <Stack.Screen 
+          name="Summary" 
+          component={SummaryScreen}
+          options={{ 
+            title: 'Weekly Summary',
+            headerBackTitle: 'Back'
+          }}
+        />
         <Stack.Screen 
           name="Settings" 
           component={SettingsScreen}
