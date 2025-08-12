@@ -1,0 +1,279 @@
+# Mental Health Coach App - Specifications
+
+## App Concept
+A daily mental health companion app that provides personalized coaching through daily activities, habit tracking, and motivational support.
+
+## Core Daily Activities/Tasks
+
+### Physical Wellness
+- **Exercise** (30 min minimum)
+  - Options: Walk, Run, Gym, Yoga, Sports, Dance
+  - Intensity levels: Light, Moderate, Intense
+- **Being Outdoors** (20 min minimum)
+  - Nature walk, Park time, Gardening, Outdoor sports
+  - Tracks sunlight exposure
+
+### Mental Wellness
+- **Meditation** (10 min minimum)
+  - Guided, Unguided, Body scan, Loving-kindness
+  - Different durations: 5, 10, 15, 20+ minutes
+- **Breathing Exercises** (5 min minimum)
+  - Box breathing, 4-7-8 technique, Belly breathing
+  - Quick stress-relief sessions
+
+### Emotional Wellness
+- **Gratitude Journal** (3 things daily)
+  - Morning or evening reflection
+  - Photo attachments optional
+- **Mood Check-in** (2-3 times daily)
+  - Scale 1-10 with emoji representations
+  - Optional: Add context/triggers
+- **Social Connection**
+  - Call/text a friend or family member
+  - In-person social interaction
+  - Acts of kindness
+
+### Cognitive Wellness
+- **Mindful Moments**
+  - 1-minute awareness breaks throughout the day
+  - Mindful eating, walking, listening
+- **Learning Something New** (15 min)
+  - Read, Watch educational content, Practice a skill
+- **Digital Detox** (1 hour before bed)
+  - No screens, Promotes better sleep
+
+### Self-Care
+- **Hydration** (8 glasses of water)
+  - Reminders throughout the day
+- **Sleep Hygiene**
+  - Track bedtime consistency
+  - 7-9 hours goal
+- **Healthy Eating**
+  - Track meals (simple yes/no for balanced meals)
+  - Mindful eating practices
+
+## Features
+
+### 1. Daily Dashboard
+- Today's tasks with checkboxes
+- Progress rings for each category
+- Motivational quote of the day
+- Weather widget (encourages outdoor activities)
+- Quick access to timer/guided sessions
+
+### 2. Streak Tracking
+- Individual activity streaks
+- Overall wellness streak
+- Milestone celebrations (7, 30, 60, 100 days)
+- Recovery streaks (getting back on track)
+- Visual calendar heat map
+
+### 3. Smart Notifications
+- Morning routine reminder (customizable time)
+- Activity reminders based on user schedule
+- Gentle nudges if falling behind
+- Celebration notifications for completions
+- End-of-day reflection prompt
+- Weather-based suggestions ("It's sunny! Perfect for outdoor time")
+
+### 4. Personalization
+- Onboarding questionnaire
+  - Current mental health goals
+  - Available time for activities
+  - Preferred notification times
+  - Physical limitations/preferences
+- Adaptive difficulty
+  - Start with 3-5 core activities
+  - Gradually add more as habits form
+- Custom activity selection
+  - Choose which activities to track
+  - Set personal minimums
+
+### 5. Progress & Insights
+- Weekly/Monthly reports
+  - Completion rates by category
+  - Mood trends
+  - Best performing days/times
+- Correlation insights
+  - "Your mood is 40% better on days you exercise"
+  - "You sleep better after meditation days"
+- Achievement badges
+  - First week complete
+  - Night owl (late evening activities)
+  - Early bird (morning routines)
+  - Consistency champion
+
+### 6. Support Features
+- In-app tips and education
+  - Why each activity matters
+  - How-to guides
+  - Science-backed benefits
+- Crisis resources
+  - Emergency hotlines
+  - Quick coping strategies
+  - Professional help finder
+- Community features (optional)
+  - Anonymous sharing of wins
+  - Accountability partners
+  - Group challenges
+
+### 7. Gamification Elements
+- Points system
+  - Daily points for task completion
+  - Bonus points for streaks
+  - Level up system
+- Wellness garden/pet
+  - Virtual space that grows with consistency
+  - Plant trees, grow flowers with completed tasks
+- Challenges
+  - 7-day meditation challenge
+  - 30-day gratitude challenge
+  - Seasonal wellness challenges
+
+## Development Strategy - Phased Approach
+
+### MVP (v1.0) - "The Essential Five" 
+**Timeline: 4-6 weeks**
+**Goal: Prove core concept, get to app store quickly**
+
+#### Core Activities (Pick 5 essentials):
+1. **Exercise** - Simple yes/no checkbox (30 min)
+2. **Meditation** - Yes/no with built-in timer (10 min)
+3. **Gratitude** - Quick text entry (3 things)
+4. **Outdoor Time** - Yes/no checkbox (20 min)
+5. **Sleep** - Log bedtime/wake time
+
+#### Features:
+- Clean, simple daily checklist
+- Basic streak counter (current & best)
+- One daily reminder notification
+- Weekly summary screen
+- Minimal onboarding (just notification time)
+
+#### Tech Stack:
+- React Native or Flutter
+- Local storage only
+- No backend required
+- No user accounts
+
+### v1.5 - "The Motivator"
+**Timeline: 2-3 weeks after v1.0**
+**Goal: Increase engagement**
+
+#### Additions:
+- Breathing exercises (with guided animation)
+- Mood check-in (morning & evening)
+- Streak celebrations & badges
+- Multiple reminder options
+- Simple insights ("3-day streak!")
+
+### v2.0 - "The Coach"
+**Timeline: 6-8 weeks after v1.5**
+**Goal: Personalization & retention**
+
+#### Major Additions:
+- All wellness categories available
+- Customizable activity selection
+- Guided meditation library
+- Detailed analytics & insights
+- Weekly/monthly reports
+- Correlation insights
+- Cloud backup (optional)
+
+### v3.0 - "The Community"
+**Timeline: 3-4 months after v2.0**
+**Goal: Scale & monetize**
+
+#### Premium Features:
+- AI-powered recommendations
+- Social features/challenges
+- Wearable integration
+- Professional content library
+- Therapist directory
+- Advanced personalization
+
+## Why This Phased Approach Works
+
+### Benefits of Starting Small:
+1. **Faster to Market** - Get user feedback in 4-6 weeks vs 4-6 months
+2. **Lower Risk** - Test core hypothesis with minimal investment
+3. **User-Friendly** - Not overwhelming for new users
+4. **Iterative Improvement** - Build what users actually want
+5. **App Store Presence** - Start building reviews/rankings early
+6. **Technical Learning** - Iron out bugs with simpler codebase
+
+### Success Metrics for MVP:
+- 1,000 downloads in first month
+- 40% 7-day retention
+- 4.0+ star rating
+- 20% daily active users
+- Average 3+ activities completed daily
+
+### MVP Development Checklist:
+- [ ] Design 5 core screens
+- [ ] Implement local data storage
+- [ ] Create streak algorithm
+- [ ] Set up notifications
+- [ ] Build simple analytics
+- [ ] App store assets
+- [ ] Beta test with 20 users
+- [ ] Launch!
+
+## User Experience Flow
+
+### First Launch
+1. Welcome screen explaining the concept
+2. Quick onboarding (3-5 questions)
+3. Select initial activities to track
+4. Set notification preferences
+5. First day tutorial
+
+### Daily Use
+1. Morning notification → Open app
+2. See today's tasks clearly displayed
+3. Tap to complete activities
+4. Quick timer/guide access for timed activities
+5. Evening reflection prompt
+6. See streak update
+
+### Weekly Review
+1. Sunday evening notification
+2. Week in review stats
+3. Celebrate achievements
+4. Set intention for next week
+5. Adjust goals if needed
+
+## Monetization Options
+- Freemium model
+  - Free: Core tracking, basic streaks
+  - Premium: Guided content, detailed analytics, unlimited customization
+- One-time purchase
+- Subscription ($4.99/month)
+  - Ad-free experience
+  - Premium guided content
+  - Advanced insights
+  - Priority support
+
+## Success Metrics
+- Daily active users
+- 7-day retention rate
+- Average streak length
+- Task completion rate
+- User mood improvement over time
+- App store ratings
+
+## Design Principles
+- Calm, soothing interface (soft colors, gentle animations)
+- Minimal cognitive load (clear, simple actions)
+- Positive reinforcement (celebrate small wins)
+- Non-judgmental (focus on progress, not perfection)
+- Accessible (large touch targets, clear text)
+- Privacy-first (all data stays on device by default)
+
+## Unique Selling Points
+1. Holistic approach (physical + mental + emotional + cognitive)
+2. Flexible and adaptive to user's life
+3. Science-backed activities only
+4. No social pressure (optional social features)
+5. Quick daily commitment (can complete basics in 5 minutes)
+6. Gentle accountability without shame

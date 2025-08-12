@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+MindfulDaily/node_modules/
+
+# Expo
+.expo/
+MindfulDaily/.expo/
+dist/
+MindfulDaily/dist/
+
+# Native builds
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+MindfulDaily/web-build/
+
+# Metro
+.metro-health-check*
+MindfulDaily/.metro-health-check*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# testing
+coverage/
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.log
+tmp/
+temp/
