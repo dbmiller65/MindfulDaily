@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import * as Notifications from 'expo-notifications';
 
@@ -40,7 +42,13 @@ export default function App() {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerShown: false,
+          headerStyle: {
+            backgroundColor: '#4CAF50',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
           animation: 'slide_from_right',
         }}
       >
@@ -53,25 +61,32 @@ export default function App() {
           name="Timer" 
           component={TimerScreen}
           options={{ 
-            title: 'Meditation Timer',
-            headerBackTitle: 'Back'
+            title: 'Meditation Timer'
           }}
         />
         <Stack.Screen 
           name="Summary" 
           component={SummaryScreen}
-          options={{ 
+          options={({ navigation }) => ({ 
             title: 'Weekly Summary',
-            headerBackTitle: 'Back'
-          }}
+            headerLeft: () => (
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <MaterialCommunityIcons name="arrow-left" size={24} color="#fff" style={{ marginLeft: 10 }} />
+              </TouchableOpacity>
+            ),
+          })}
         />
         <Stack.Screen 
           name="Settings" 
           component={SettingsScreen}
-          options={{ 
+          options={({ navigation }) => ({ 
             title: 'Settings',
-            headerBackTitle: 'Back'
-          }}
+            headerLeft: () => (
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <MaterialCommunityIcons name="arrow-left" size={24} color="#fff" style={{ marginLeft: 10 }} />
+              </TouchableOpacity>
+            ),
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>
