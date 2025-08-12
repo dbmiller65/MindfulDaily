@@ -296,8 +296,18 @@ const HomeScreen = ({ navigation }) => {
         }
       >
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>Today's Activities</Text>
-          <Text style={styles.date}>{format(new Date(), 'EEEE, MMM d')}</Text>
+          <View>
+            <Text style={styles.headerTitle}>Daily Activities</Text>
+            <Text style={styles.date}>{format(new Date(), 'EEEE, MMM d')}</Text>
+          </View>
+          <View style={styles.headerIcons}>
+            <TouchableOpacity onPress={() => navigation.navigate('Summary')} style={styles.headerIcon}>
+              <MaterialCommunityIcons name="chart-bar" size={24} color="#fff" />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Settings')} style={styles.headerIcon}>
+              <MaterialCommunityIcons name="cog" size={24} color="#fff" />
+            </TouchableOpacity>
+          </View>
         </View>
         <Text style={styles.greeting}>How are you feeling today?</Text>
 
@@ -363,23 +373,8 @@ const HomeScreen = ({ navigation }) => {
           ))}
         </View>
 
-        {/* Quick Actions */}
-        <View style={styles.quickActions}>
-          <TouchableOpacity
-            style={styles.actionButton}
-            onPress={() => navigation.navigate('Summary')}
-          >
-            <MaterialCommunityIcons name="chart-line" size={24} color="#666" />
-            <Text style={styles.actionText}>Weekly Summary</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.actionButton}
-            onPress={() => navigation.navigate('Settings')}
-          >
-            <MaterialCommunityIcons name="cog" size={24} color="#666" />
-            <Text style={styles.actionText}>Settings</Text>
-          </TouchableOpacity>
-        </View>
+
+
       </ScrollView>
 
       {/* Exercise Modal */}
@@ -612,10 +607,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
   },
   header: {
+    backgroundColor: '#4CAF50',
     padding: 20,
-    backgroundColor: '#FFF',
-    borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
+    paddingTop: 60,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  headerIcons: {
+    flexDirection: 'row',
+    gap: 15,
+  },
+  headerIcon: {
+    padding: 5,
   },
   date: {
     fontSize: 16,

@@ -67,26 +67,16 @@ export default function App() {
         <Stack.Screen 
           name="Summary" 
           component={SummaryScreen}
-          options={({ navigation }) => ({ 
-            title: 'Weekly Summary',
-            headerLeft: () => (
-              <TouchableOpacity onPress={() => navigation.goBack()}>
-                <MaterialCommunityIcons name="arrow-left" size={24} color="#fff" style={{ marginLeft: 10 }} />
-              </TouchableOpacity>
-            ),
-          })}
+          options={{ 
+            title: 'Weekly Summary'
+          }}
         />
         <Stack.Screen 
           name="Settings" 
           component={SettingsScreen}
-          options={({ navigation }) => ({ 
-            title: 'Settings',
-            headerLeft: () => (
-              <TouchableOpacity onPress={() => navigation.goBack()}>
-                <MaterialCommunityIcons name="arrow-left" size={24} color="#fff" style={{ marginLeft: 10 }} />
-              </TouchableOpacity>
-            ),
-          })}
+          options={{ 
+            title: 'Settings'
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
