@@ -1,0 +1,38 @@
+{
+  "cli": {
+    "version": ">= 5.0.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m-medium"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m-medium"
+      }
+    },
+    "production": {
+      "ios": {
+        "resourceClass": "m-medium",
+        "buildConfiguration": "Release"
+      },
+      "env": {
+        "EXPO_NO_CAPABILITY_SYNC": "1"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleId": "dbmillercode-itunes@yahoo.com",
+        "ascAppId": "",
+        "appleTeamId": "QN6N2RNWY7"
+      }
+    }
+  }
+}

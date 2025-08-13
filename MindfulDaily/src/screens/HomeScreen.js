@@ -268,18 +268,31 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const saveOutdoor = async () => {
-    const updatedActivities = activities.map(a => 
-      a.id === 'outdoorTime' ? { 
-        ...a, 
-        completed: true,
-        outdoorType: outdoorType,
-        actualDuration: parseInt(outdoorMinutes) || 20
-      } : a
-    );
-    setActivities(updatedActivities);
-    await storage.saveTodayActivities(updatedActivities);
-    await updateStreaks(updatedActivities);
-    setOutdoorModalVisible(false);
+    try {
+      // Check if activity type is selected
+      if (!outdoorActivity) {
+        Alert.alert('Please Select Activity', 'Choose an outdoor activity type (Walk, Hike, etc.)');
+        return;
+      }
+      
+      const updatedActivities = activities.map(a => 
+        a.id === 'outdoor' ? { 
+          ...a, 
+          completed: true,
+          outdoorType: outdoorActivity,
+          actualDuration: parseInt(outdoorMinutes) || 20
+        } : a
+      );
+      
+      setActivities(updatedActivities);
+      await storage.saveTodayActivities(updatedActivities);
+      await updateStreaks(updatedActivities);
+      setOutdoorsModal(false);
+      
+    } catch (error) {
+      console.error('Error in saveOutdoor:', error);
+      Alert.alert('ERROR', `Failed: ${error.message}`);
+    }
   };
 
   const completedCount = activities.filter(a => a.completed).length;
